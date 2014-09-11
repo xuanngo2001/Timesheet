@@ -9,7 +9,7 @@
 		
 		<!-- timesheet.js name has to change because webserver doesn't accept javascript extension.
 		      Therefore, append text extension and adjust name change accordingly in timesheet.html. -->
-		<replace file="${release.dir}/timesheet.html" token="timesheet.js" value="timesheet.js_.txt"/>
+		<replace file="${release.dir}/timesheet.html" token="&quot;timesheet.js&quot;" value="&quot;timesheet.js_.txt&quot;"/>
 	</target>
  
 </project>
