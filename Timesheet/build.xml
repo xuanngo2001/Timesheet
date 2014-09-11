@@ -6,11 +6,11 @@
 		<copy file="timesheet.css" tofile="${release.dir}/timesheet.css"/>
 		<copy file="webpage.css" tofile="${release.dir}/webpage.css"/>
     <copy file="timesheet.html" tofile="${release.dir}/timesheet.html"/>
-	  <copy file="timesheet.js" tofile="${release.dir}/timesheet.js_.txt"/>
+	  <copy file="timesheet.js" tofile="${release.dir}/timesheet.js"/>
 		
 		<!-- timesheet.js name has to change because webserver doesn't accept javascript extension.
 		      Therefore, append text extension and adjust name change accordingly in timesheet.html. -->
-		<replace file="${release.dir}/timesheet.html" token="&quot;timesheet.js&quot;" value="&quot;timesheet.js_.txt&quot;"/>
+		<!-- <replace file="${release.dir}/timesheet.html" token="&quot;timesheet.js&quot;" value="&quot;timesheet.js_.txt&quot;"/> -->
 		
 		<antcall target="add_timestamp" />
 	</target>
