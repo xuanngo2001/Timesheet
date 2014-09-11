@@ -16,6 +16,7 @@ $(document).ready(function(){
 		remove_all_child_elements("input-data-table-body"); // Clear data container table first.
 		
 		var data = [
+		            	// Description, column #, start time, duration
 			            ["English Inter", "1", "19:00", "60"],
 			            ["English Beg", "1", "20:00", "60"],
 			            
