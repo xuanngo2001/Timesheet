@@ -40,3 +40,8 @@ input#export-to-excel
 {
 	 margin-left: 1em;
 }
+
+table#input-table > tbody > tr > th
+{
+	text-align: right;
+}
