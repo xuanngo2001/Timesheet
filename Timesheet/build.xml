@@ -8,16 +8,13 @@
     <copy overwrite="true" file="timesheet.html" tofile="${release.dir}/timesheet.html"/>
 	  <copy overwrite="true" file="timesheet.js" tofile="${release.dir}/timesheet.js"/>
 		
-		<!-- timesheet.js name has to change because webserver doesn't accept javascript extension.
-		      Therefore, append text extension and adjust name change accordingly in timesheet.html. -->
-		<!-- <replace file="${release.dir}/timesheet.html" token="&quot;timesheet.js&quot;" value="&quot;timesheet.js_.txt&quot;"/> -->
+		<tstamp><format property="DAY_TIME_NOW" pattern="yyyy-MM-dd_HH.mm.ss" /></tstamp>
+		<replace file="${release.dir}/timesheet.css" token="VERSION" value="${DAY_TIME_NOW}"/>
+		<replace file="${release.dir}/webpage.css" token="VERSION" value="${DAY_TIME_NOW}"/>
+		<replace file="${release.dir}/timesheet.html" token="VERSION" value="${DAY_TIME_NOW}"/>
+		<replace file="${release.dir}/timesheet.js" token="VERSION" value="${DAY_TIME_NOW}"/>
 		
-		<antcall target="add_timestamp" />
 	</target>
- 
-  <target name="add_timestamp">
-    <tstamp><format property="DAY_TIME_NOW" pattern="yyyy-MM-dd_HH.mm.ss" /></tstamp>
-    <echo file="${release.dir}/BUILT_ON" message="${ant.project.name} is built on ${DAY_TIME_NOW}."/>
-  </target>
+
 	
 </project>
