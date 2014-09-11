@@ -352,6 +352,12 @@ function replace_input_with_value_text(html_table)
 	return html_table;
 }
 
+/************************************************************************
+ *                          
+ *                          Export to EXCEL
+ *                          
+ ************************************************************************/
+
 function td_inline_styling(html_table)
 {
 	var tds = html_table.getElementsByTagName("td");
@@ -369,8 +375,15 @@ function td_inline_styling(html_table)
 		
 		if(tds[i].className=="time-scale" )
 		{
-			tds[i].style.textAlign="right";
+			/* Top of cell and bold. */
+			tds[i].style.verticalAlign="super";
+			tds[i].style.fontWeight="bold";
 		}
+		
+		if(tds[i].className=="column-header" )
+		{
+			tds[i].style.fontWeight="bold";
+		}		
 		
 	}
 	return html_table;

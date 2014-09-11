@@ -7,11 +7,13 @@ table,th, td
 	border: 1px solid gray;
 }
 
+/* Top of cell and bold. */
 .time-scale
 {
 	/*Text*/
 	font-size: xx-small;
-	vertical-align: top;
+	font-weight: bold;
+	vertical-align: super;
 }
 
 td.time-scale, td.no-event
