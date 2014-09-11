@@ -56,10 +56,10 @@ $(document).ready(function(){
 			
 			$("#add-event-button").click();
 		}
-
+		
+		scrollTo("#data-table");
 	});
-
-
+	
 });
 //======================================================
 //======================================================
@@ -197,7 +197,12 @@ $(document).ready(function(){
 		
 		remove_all_child_elements("timesheet-body"); // Clear timesheet table first.
 		$("#timesheet-body").append(timesheet_html);
+		
+		scrollTo("#timesheet");
 	});
+	
+	
+
 });
 
 /**
@@ -387,4 +392,16 @@ function td_inline_styling(html_table)
 		
 	}
 	return html_table;
+}
+
+/************************************************************************
+ *                          
+ *                          Helpers
+ *                          
+ ************************************************************************/
+function scrollTo(hash)
+{
+    $('html, body').animate({
+        'scrollTop':   $(hash).offset().top
+      }, 1000);	
 }

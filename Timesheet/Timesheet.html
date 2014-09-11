@@ -8,13 +8,16 @@
 	 
  </head>                                                                 
  <body>
+	<h1>Timesheet at Github</h1>
+	<p>Latest version can be found at <a href="https://github.com/xuanngo/Timesheet">https://github.com/xuanngo/Timesheet</a>.</p>
 	
+  <h1>Step 0: Generate sample data</h1>
 	<input id="generate-test-data" type="button" value="Generate Test Data"/>
 	
 	<h1>Step 1: Input data</h1>
 	<!-- Input form from user -->
 	<form>
-		<table class="row_based">
+		<table id="input-table">
 			<tbody>
 				<tr>
 					<th><label for="event-description">Event description</label></th>
@@ -46,7 +49,7 @@
 	
 	<br /><br />
 	<!-- Data container -->
-  <table class="column_based">
+  <table id="data-table">
   	<thead>
   		<tr>
   			<th>Event Description</th>
@@ -76,7 +79,6 @@
 
 	<br /><br />
 	<h1>Step 3: Export</h1>
-	<br /><br />
 	<a id="export-to-excel" href="javascript:export_to_excel('timesheet')">Export To Excel</a>
 
  </body>                                                                 
