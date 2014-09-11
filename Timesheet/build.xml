@@ -10,6 +10,13 @@
 		<!-- timesheet.js name has to change because webserver doesn't accept javascript extension.
 		      Therefore, append text extension and adjust name change accordingly in timesheet.html. -->
 		<replace file="${release.dir}/timesheet.html" token="&quot;timesheet.js&quot;" value="&quot;timesheet.js_.txt&quot;"/>
+		
+		<antcall target="add_timestamp" />
 	</target>
  
+  <target name="add_timestamp">
+    <tstamp><format property="DAY_TIME_NOW" pattern="yyyy-MM-dd_HH.mm.ss" /></tstamp>
+    <echo file="${release.dir}/BUILT_ON" message="${ant.project.name} is built on ${DAY_TIME_NOW}."/>
+  </target>
+	
 </project>
