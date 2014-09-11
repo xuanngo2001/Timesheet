@@ -16,34 +16,34 @@ $(document).ready(function(){
 		remove_all_child_elements("data-container-body"); // Clear data container table first.
 		
 		var data = [
-			            ["Salsa Inter", "1", "19:00", "60"],
-			            ["Salsa Beg", "1", "20:00", "60"],
+			            ["English Inter", "1", "19:00", "60"],
+			            ["English Beg", "1", "20:00", "60"],
 			            
-                        ["Bachata Intro", "2", "18:00", "60"],
-                        ["Salsa Intro", "2", "19:00", "60"],
-                        ["Bachata Inter", "2", "20:00", "60"],
+                        ["Spanish Intro", "2", "18:00", "60"],
+                        ["English Intro", "2", "19:00", "60"],
+                        ["Spanish Inter", "2", "20:00", "60"],
                         
                         
-                        ["Salsa Beg", "3", "19:00", "60"],
-                        ["Salsa Intro", "3", "20:00", "60"],
-                        ["Dance practice", "3", "21:00", "60"],
+                        ["English Beg", "3", "19:00", "60"],
+                        ["English Intro", "3", "20:00", "60"],
+                        ["Speaking practice", "3", "21:00", "60"],
                         
-                        ["Salsa Inter", "4", "19:00", "60"],
+                        ["English Inter", "4", "19:00", "60"],
                         
                         
-                        ["Bachata Inter", "5", "18:00", "60"],
-                        ["Salsa Intro", "5", "19:00", "60"],
-                        ["Bachata Beg", "5", "20:00", "60"],
-                        ["Salsa Beg", "5", "21:00", "60"],
+                        ["Spanish Inter", "5", "18:00", "60"],
+                        ["English Intro", "5", "19:00", "60"],
+                        ["Spanish Beg", "5", "20:00", "60"],
+                        ["English Beg", "5", "21:00", "60"],
                         
                         ["Vegetarian", "6", "17:00", "120"],
                         
                         
-                        ["Bachata Beg", "7", "17:00", "60"],
-                        ["Salsa Beg", "7", "18:00", "60"],
-                        ["Salsa Plus", "7", "19:00", "60"],
-                        ["Salsa Inter", "7", "20:00", "60"],
-                        ["Dance practice", "7", "21:00", "60"]
+                        ["Spanish Beg", "7", "17:00", "60"],
+                        ["English Beg", "7", "18:00", "60"],
+                        ["English Plus", "7", "19:00", "60"],
+                        ["English Inter", "7", "20:00", "60"],
+                        ["Speaking practice", "7", "21:00", "60"]
 		            ]; // IE will display warning if you put comma at the last set of arrays.
 
 		for(i=0; i<data.length; i++)
