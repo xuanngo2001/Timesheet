@@ -17,7 +17,7 @@ $(document).ready(function(){
 		
 		var data = [
 		            	// Description, column #, start time, duration
-			            ["English Inter", "1", "19:00", "60"],
+			            ["English Inter", "1", "19:05", "51"],
 			            ["English Beg", "1", "20:00", "60"],
 			            
                         ["Spanish Intro", "2", "18:00", "60"],
@@ -83,15 +83,16 @@ $(document).ready(function(){
 						'<td>'+column_number+'</td>'+  
 						'<td>'+start_time+'</td>'+  
 						'<td>'+duration+'</td>'+  
-						'<td onclick=remove_event(\''+tr_id+'\')><a href="#">Remove</a></td>'+ 
+						'<td onclick=remove_event(\''+tr_id+'\')><a href="#input-data-table">Remove</a></td>'+ 
 					  '</tr>'
 		$("#input-data-table-body").append(html_tr);
 		unique_id++;
+		
 	});
 
 
 });
- 
+
 /**
  * Remove the element itself and its children.
  * @param id

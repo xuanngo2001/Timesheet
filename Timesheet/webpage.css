@@ -45,3 +45,8 @@ table#input-table > tbody > tr > th
 {
 	text-align: right;
 }
+
+table#input-data-table
+{
+	 margin-left: 5em;
+}
