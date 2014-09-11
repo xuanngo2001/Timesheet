@@ -162,7 +162,8 @@ $(document).ready(function(){
 		for(i=1; i<=column_number; i++)
 		{
 			//timesheet_html +="<td id=\"column-header-"+i+"\"><input class=\"column-input-header\" type=\"text\" value=\"Column #"+i+"\"/></td>";
-			timesheet_html +="<td class=\"column-header\"><input class=\"column-input-header\" type=\"text\" value=\"Column #"+i+"\" maxlength=\"60\"/></td>";
+			//timesheet_html +="<td class=\"column-header\"><input class=\"column-input-header\" type=\"text\" value=\"Column #"+i+"\" maxlength=\"60\"/></td>";
+			timesheet_html +='<td class="column-header"><input class="column-input-header" type="text" value="Column #'+i+'" maxlength="60"/></td>';
 		}
 		timesheet_html +="</tr>";
 		
