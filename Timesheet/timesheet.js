@@ -13,7 +13,7 @@ $(document).ready(function(){
 	
 	$("#generate-test-data").click(function() {
 		
-		remove_all_child_elements("input-table-body"); // Clear data container table first.
+		remove_all_child_elements("input-data-table-body"); // Clear data container table first.
 		
 		var data = [
 			            ["English Inter", "1", "19:00", "60"],
@@ -57,7 +57,7 @@ $(document).ready(function(){
 			$("#add-event-button").click();
 		}
 		
-		scrollTo("#input-table");
+		scrollTo("#input-data-table");
 	});
 	
 });
@@ -84,7 +84,7 @@ $(document).ready(function(){
 						'<td>'+duration+'</td>'+  
 						'<td onclick=remove_event(\''+tr_id+'\')><a href="#">Remove</a></td>'+ 
 					  '</tr>'
-		$("#input-table-body").append(html_tr);
+		$("#input-data-table-body").append(html_tr);
 		unique_id++;
 	});
 
@@ -123,11 +123,11 @@ $(document).ready(function(){
 		
 		var event_data = new Array();
 
-		// Getting final version of #input-table-body table and
+		// Getting final version of #input-data-table-body table and
 		//	add "start time in minutes" and "end time in minutes" to the array.
-		$("#input-table-body > tr").each(function() {
+		$("#input-data-table-body > tr").each(function() {
 			
-			// Get all data from input-table-body table.
+			// Get all data from input-data-table-body table.
 			var row_data = new Array();
 			$(this).find("td").each(function() {
 				row_data.push($(this).html());
