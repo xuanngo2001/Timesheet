@@ -4,6 +4,7 @@
 	<property name="release.dir" value="./release"/>
 	<target name="release">
 		<copy file="timesheet.css" tofile="${release.dir}/timesheet.css"/>
+		<copy file="webpage.css" tofile="${release.dir}/webpage.css"/>
     <copy file="timesheet.html" tofile="${release.dir}/timesheet.html"/>
 	  <copy file="timesheet.js" tofile="${release.dir}/timesheet.js_.txt"/>
 		
