@@ -153,15 +153,16 @@ $(document).ready(function(){
 		var time_minutes = start_end_minutes[0];
 		var end_minutes = start_end_minutes[1];
 		
-		var column_number = get_number_of_columns(event_data);
+		//var column_number = get_number_of_columns(event_data);
+		var column_headers = get_column_headers(event_data);
 
 		var timesheet_html = "";
 
 		// Create columns headers
 		timesheet_html +="<tr><td>&nbsp;</td>";
-		for(i=1; i<=column_number; i++)
+		for(i=0; i<column_headers.length; i++)
 		{
-			timesheet_html +='<td class="column-header"><input class="column-input-header" type="text" value="Column #'+i+'" maxlength="60"/></td>';
+			timesheet_html +='<td class="column-header"><input class="column-input-header" type="text" value="Column #'+column_headers[i]+'" maxlength="60"/></td>';
 		}
 		timesheet_html +="</tr>";
 		
@@ -170,12 +171,12 @@ $(document).ready(function(){
 		{
 			timesheet_html +="<tr>";
 			timesheet_html +="<td class=\"time-scale\">"+get_formatted_time(time_minutes)+"</td>";
-			for(column=1; column<=column_number; column++)
+			for(column=0; column<column_headers.length; column++)
 			{
 				var event_found = false;
 				for(i=0; i<event_data.length; i++)
 				{
-					if(column==event_data[i][1])
+					if(column_headers[column]==event_data[i][1])
 					{
 				
 						if( event_data[i][START_IN_MINUTES_ID] >= time_minutes && event_data[i][START_IN_MINUTES_ID] < time_minutes+time_slice )
@@ -257,6 +258,24 @@ function get_number_of_columns(event_data)
 	});
 	
 	return unique_columns.length;
+}
+
+function get_column_headers(event_data)
+{
+	// Get all column headers.
+	var columns = new Array();
+	for(i=0; i < event_data.length; i++)
+	{
+		columns.push(event_data[i][1]);
+	}
+	
+	// Remove duplicate column headers.
+	var unique_columns = new Array();
+	$.each(columns, function(i, el){
+	    if($.inArray(el, unique_columns) === -1) unique_columns.push(el);
+	});
+	
+	return unique_columns;
 }
 
 function get_formatted_time(time_in_minutes)
