@@ -3,83 +3,93 @@
  <head>
 	 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	 <link rel="stylesheet" type="text/css" href="timesheet.css">
+	 <link rel="stylesheet" type="text/css" href="webpage.css">
 	 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>            
 	 <script type="text/javascript" src="timesheet.js"></script>
 	 
  </head>                                                                 
  <body>
-	<h1>Timesheet at Github</h1>
-	<p>Latest version can be found at <a href="https://github.com/xuanngo/Timesheet">https://github.com/xuanngo/Timesheet</a>.</p>
+	<h1>Timesheet</h1>
+	<dl>
+		<dt>Description</dt>
+		<dd>Given event times and durations, it will generate schedule time table for you. It can also export to Excel.</dd>
+	 
+	  <dt>Github</dt>
+	  <dd>Latest version can be found at <a href="https://github.com/xuanngo/Timesheet">https://github.com/xuanngo/Timesheet</a>.</dd>
+	</dl>
 	
-  <h1>Step 0: Generate sample data</h1>
-	<input id="generate-test-data" type="button" value="Generate Test Data"/>
+	<div id="steps">
+	  <h2><span class="step-label">&#8680; Step 0: Generate sample data</span></h2>
+		<input id="generate-test-data" type="button" value="Generate Test Data"/>
+		
+		<h2><span class="step-label">&#8680; Step 1: Input data</span></h2>
+		<!-- Input form from user -->
+		<form>
+			<table id="input-table">
+				<tbody>
+					<tr>
+						<th><label for="event-description">Event description</label></th>
+						<td><input type="text" name="event-description" id="event-description" value="" maxlength="254" size="60" /></td>
+					</tr>
+					
+					<tr>
+						<th><label for="column-number">Column #</label></th>
+						<td><input type="text" name="column-number" id="column-number" value="" maxlength="2" size="2" /></td>
+					</tr>
+		
+					<tr>
+						<th><label for="start-time">Start Time</label></th>
+						<td><input type="text" name="start-time" id="start-time" value="" maxlength="5" size="5" /> (e.g 8:15)</td>
+					</tr>
+					
+					<tr>
+						<th><label for="duration">Duration</label></th>
+						<td><input type="text" name="duration" id="duration" value="" maxlength="3" size="3" /> minutes</td>
+					</tr>
+					
+					<tr>
+						<td>&nbsp;</td>
+						<td><input id="add-event-button" type="button" value="Add"/></td>
+					</tr>
+				</tbody>
+			</table>
+		</form> 
+		
+		<br /><br />
+		<!-- Data container -->
+	  <table id="data-table">
+	  	<thead>
+	  		<tr>
+	  			<th>Event Description</th>
+	  			<th>Column #</th>
+	  			<th>Start time</th>
+	  			<th>Duration</th>
+	  			<th>Remove</th>
+	  		</tr>
+	  	</thead>
+	  	
+	  	<tbody id="data-container-body">
+	  	</tbody>
+	  </table>
 	
-	<h1>Step 1: Input data</h1>
-	<!-- Input form from user -->
-	<form>
-		<table id="input-table">
-			<tbody>
-				<tr>
-					<th><label for="event-description">Event description</label></th>
-					<td><input type="text" name="event-description" id="event-description" value="" maxlength="254" size="60" /></td>
-				</tr>
-				
-				<tr>
-					<th><label for="column-number">Column #</label></th>
-					<td><input type="text" name="column-number" id="column-number" value="" maxlength="2" size="2" /></td>
-				</tr>
-	
-				<tr>
-					<th><label for="start-time">Start Time</label></th>
-					<td><input type="text" name="start-time" id="start-time" value="" maxlength="5" size="5" /> (e.g 8:15)</td>
-				</tr>
-				
-				<tr>
-					<th><label for="duration">Duration</label></th>
-					<td><input type="text" name="duration" id="duration" value="" maxlength="3" size="3" /> minutes</td>
-				</tr>
-				
-				<tr>
-					<td>&nbsp;</td>
-					<td><input id="add-event-button" type="button" value="Add"/></td>
-				</tr>
-			</tbody>
-		</table>
-	</form> 
-	
-	<br /><br />
-	<!-- Data container -->
-  <table id="data-table">
-  	<thead>
-  		<tr>
-  			<th>Event Description</th>
-  			<th>Column #</th>
-  			<th>Start time</th>
-  			<th>Duration</th>
-  			<th>Remove</th>
-  		</tr>
-  	</thead>
-  	
-  	<tbody id="data-container-body">
-  	</tbody>
-  </table>
-
+		
+		
+		<br /><br />
+		<h2><span class="step-label">&#8680; Step 2: Generate timesheet</span></h2>
+		<input id="generate-timesheet" type="button" value="Generate Timesheet"/>
+		<br /><br />
+		<!-- Timesheet -->
+		<p><b>Column #X</b> can be edited. It will be reflected in the Excel when exported.</p>
+	  <table id="timesheet">
+	  	<tbody id="timesheet-body"/>
+	  </table>	
 	
 	
-	<br /><br />
-	<h1>Step 2: Generate timesheet</h1>
-	<input id="generate-timesheet" type="button" value="Generate Timesheet"/>
-	<br /><br />
-	<!-- Timesheet -->
-	<p><b>Column #X</b> can be edited. It will be reflected in the Excel when exported.</p>
-  <table id="timesheet">
-  	<tbody id="timesheet-body"/>
-  </table>	
-
-
-	<br /><br />
-	<h1>Step 3: Export</h1>
-	<a id="export-to-excel" href="javascript:export_to_excel('timesheet')">Export To Excel</a>
+		<br /><br />
+		<h2><span class="step-label">&#8680; Step 3: Export</span></h2>
+		<a id="export-to-excel" href="javascript:export_to_excel('timesheet')">Export To Excel</a>
+  
+  </div>
 
  </body>                                                                 
  </html>
