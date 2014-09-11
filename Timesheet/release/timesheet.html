@@ -1,0 +1,82 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd"> 
+<html>                                                                 
+ <head>
+	 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	 <link rel="stylesheet" type="text/css" href="timesheet.css">
+	 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>            
+	 <script type="text/javascript" src="timesheet.js_.txt_.txt_.txt"></script>
+	 
+ </head>                                                                 
+ <body>
+	
+	<input id="generate-test-data" type="button" value="Generate Test Data"/>
+	
+	<h1>Step 1: Input data</h1>
+	<!-- Input form from user -->
+	<form>
+		<table class="row_based">
+			<tbody>
+				<tr>
+					<th><label for="event-description">Event description</label></th>
+					<td><input type="text" name="event-description" id="event-description" value="" maxlength="254" size="60" /></td>
+				</tr>
+				
+				<tr>
+					<th><label for="column-number">Column #</label></th>
+					<td><input type="text" name="column-number" id="column-number" value="" maxlength="2" size="2" /></td>
+				</tr>
+	
+				<tr>
+					<th><label for="start-time">Start Time</label></th>
+					<td><input type="text" name="start-time" id="start-time" value="" maxlength="5" size="5" /> (e.g 8:15)</td>
+				</tr>
+				
+				<tr>
+					<th><label for="duration">Duration</label></th>
+					<td><input type="text" name="duration" id="duration" value="" maxlength="3" size="3" /> minutes</td>
+				</tr>
+				
+				<tr>
+					<td>&nbsp;</td>
+					<td><input id="add-event-button" type="button" value="Add"/></td>
+				</tr>
+			</tbody>
+		</table>
+	</form> 
+	
+	<br /><br />
+	<!-- Data container -->
+  <table class="column_based">
+  	<thead>
+  		<tr>
+  			<th>Event Description</th>
+  			<th>Column #</th>
+  			<th>Start time</th>
+  			<th>Duration</th>
+  			<th>Remove</th>
+  		</tr>
+  	</thead>
+  	
+  	<tbody id="data-container-body">
+  	</tbody>
+  </table>
+
+	
+	
+	<br /><br />
+	<h1>Step 2: Generate timesheet</h1>
+	<input id="generate-timesheet" type="button" value="Generate Timesheet"/>
+	<br /><br />
+	<!-- Timesheet -->
+  <table id="timesheet">
+  	<tbody id="timesheet-body"/>
+  </table>	
+
+
+	<br /><br />
+	<h1>Step 3: Export</h1>
+	<br /><br />
+	<a id="export-to-excel" href="javascript:export_to_excel('timesheet')">Export To Excel</a>
+
+ </body>                                                                 
+ </html>

@@ -1,0 +1,35 @@
+table
+{
+	border-collapse:collapse;
+}
+table,th, td
+{
+	border: 1px solid gray;
+}
+
+.time-scale
+{
+	/*Text*/
+	font-size: xx-small;
+	vertical-align: top;
+}
+
+td.time-scale, td.no-event
+{
+	/*Border*/
+	border-style: dotted;
+	border-color: gray;
+}
+
+td.event
+{
+	background-color: #D3D3D3;
+	text-align: center;
+}
+
+input.column-input-header
+{
+	width: 95%;
+	text-align: right;
+	font-weight: bold;
+}
