@@ -1,4 +1,4 @@
-/* Version = 2014-09-12_14.56.52 */
+/* Version = 2014-09-12_15.59.23 */
 
 
 /* CSS customization no related to the timesheet itself */
@@ -21,6 +21,14 @@ dl > dt
 	font-weight: bold;
 }
 
+.step-label
+{
+  background-color: #279B61;
+  color: white;
+}
+
+/** Structure layout **/
+/**********************/
 div#steps
 {
 	margin-left: 5em;
@@ -31,11 +39,7 @@ div#steps
 	border-width: 1px;
 	border-color: gray;
 }
-.step-label
-{
-	background-color: #279B61;
-	color: white;
-}
+
 
 table#input-table > tbody > tr > th
 {

@@ -3,16 +3,24 @@
  
 	<property name="release.dir" value="./release"/>
 	<target name="release">
-		<copy overwrite="true" file="timesheet.css" tofile="${release.dir}/timesheet.css"/>
-		<copy overwrite="true" file="webpage.css" tofile="${release.dir}/webpage.css"/>
-    <copy overwrite="true" file="timesheet.html" tofile="${release.dir}/timesheet.html"/>
-	  <copy overwrite="true" file="timesheet.js" tofile="${release.dir}/timesheet.js"/>
 		
+    <copy todir="${release.dir}/css">
+      <fileset dir="./css"/>
+    </copy>   
+
+    <copy todir="${release.dir}/js">
+      <fileset dir="./js"/>
+    </copy>
+		
+    <copy overwrite="true" file="timesheet.html" tofile="${release.dir}/timesheet.html"/>
+		
+   
+	  <!-- Add version number. -->
 		<tstamp><format property="DAY_TIME_NOW" pattern="yyyy-MM-dd_HH.mm.ss" /></tstamp>
-		<replace file="${release.dir}/timesheet.css" token="VERSION" value="${DAY_TIME_NOW}"/>
-		<replace file="${release.dir}/webpage.css" token="VERSION" value="${DAY_TIME_NOW}"/>
-		<replace file="${release.dir}/timesheet.html" token="VERSION" value="${DAY_TIME_NOW}"/>
-		<replace file="${release.dir}/timesheet.js" token="VERSION" value="${DAY_TIME_NOW}"/>
+		<replace dir="${release.dir}" value="${DAY_TIME_NOW}">
+		  <include name="**/**"/>
+		  <replacetoken>AUTO_VERSION</replacetoken>
+		</replace>
 		
 	</target>
 

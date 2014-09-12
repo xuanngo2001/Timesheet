@@ -1,4 +1,4 @@
-/* Version = 2014-09-12_14.56.52 */
+/* Version = AUTO_VERSION */
 
 //======================================================
 //======================================================
@@ -245,22 +245,6 @@ function get_start_end_minutes(event_data, time_slice)
 	maximum_end = Math.ceil(maximum_end/time_slice)*time_slice;
 	return new Array(minimum_start, maximum_end);
 };
-
-function get_number_of_columns(event_data)
-{
-	var columns = new Array();
-	for(i=0; i < event_data.length; i++)
-	{
-		columns.push(event_data[i][1]);
-	}
-	
-	var unique_columns = new Array();
-	$.each(columns, function(i, el){
-	    if($.inArray(el, unique_columns) === -1) unique_columns.push(el);
-	});
-	
-	return unique_columns.length;
-}
 
 function get_column_headers(event_data)
 {
