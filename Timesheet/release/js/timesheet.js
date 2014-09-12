@@ -1,5 +1,5 @@
 /**
- * @version = 2014-09-12_16.52.08
+ * @version = 2014-09-12_16.55.07
  * @author  = Xuan Ngo
  */
 
@@ -127,7 +127,6 @@ $(document).ready(function(){
 		var time_minutes = start_end_minutes[0];
 		var end_minutes = start_end_minutes[1];
 		
-		//var column_number = get_number_of_columns(event_data);
 		var column_headers = get_column_headers(event_data);
 
 		var timesheet_html = "";

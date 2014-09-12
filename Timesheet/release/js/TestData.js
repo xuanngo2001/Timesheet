@@ -1,5 +1,5 @@
 /**
- * @version = 2014-09-12_16.47.13
+ * @version = 2014-09-12_16.57.16
  * @author  = Xuan Ngo
  */
 
@@ -15,8 +15,8 @@ TestData.prototype.getData = function ()
 	            ["English Beg", "1", "20:00", "60"],
 	            
                 ["Spanish Intro", "2", "19:00", "60"],
-                ["English Intro", "2", "16:00", "60"],
-                ["Spanish Inter", "2", "20:00", "60"],
+                ["English Intro", "2", "16:45", "60"],
+                ["Spanish Inter", "2", "20:15", "60"],
                 
                 
                 ["English Beg", "3", "19:00", "60"],
