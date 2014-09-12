@@ -19,7 +19,7 @@
 		<tstamp><format property="DAY_TIME_NOW" pattern="yyyy-MM-dd_HH.mm.ss" /></tstamp>
 		<replace dir="${release.dir}" value="${DAY_TIME_NOW}">
 		  <include name="**/**"/>
-		  <replacetoken>AUTO_VERSION</replacetoken>
+		  <replacetoken>$AUTO_VERSION</replacetoken>
 		</replace>
 		
 	</target>
