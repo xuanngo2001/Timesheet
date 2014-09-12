@@ -1,5 +1,5 @@
 /**
- * @version = $2014-09-12_16.17.03
+ * @version = 2014-09-12_16.41.41
  * @author  = Xuan Ngo
  */
 
@@ -20,45 +20,14 @@ $(document).ready(function(){
 		
 		remove_all_child_elements("input-data-table-body"); // Clear data container table first.
 		
-		var data = [
-		            	// Description, column #, start time, duration
-			            ["English Inter", "1", "19:05", "51"],
-			            ["English Beg", "1", "20:00", "60"],
-			            
-                        ["Spanish Intro", "2", "18:00", "60"],
-                        ["English Intro", "2", "19:00", "60"],
-                        ["Spanish Inter", "2", "20:00", "60"],
-                        
-                        
-                        ["English Beg", "3", "19:00", "60"],
-                        ["English Intro", "3", "20:00", "60"],
-                        ["Speaking practice", "3", "21:00", "60"],
-                        
-                        ["English Inter", "8", "19:00", "60"],
-                        
-                        
-                        ["Spanish Inter", "5", "18:00", "60"],
-                        ["English Intro", "5", "19:00", "60"],
-                        ["Spanish Beg", "5", "20:00", "60"],
-                        ["English Beg", "5", "21:00", "60"],
-                        
-                        ["Vegetarian", "6", "17:00", "120"],
-                        
-                        
-                        ["Spanish Beg", "7", "17:00", "60"],
-                        ["English Beg", "7", "18:00", "60"],
-                        ["English Plus", "7", "19:00", "60"],
-                        ["English Inter", "7", "20:00", "60"],
-                        ["Speaking practice", "7", "21:00", "60"]
-		            ]; // IE will display warning if you put comma at the last set of arrays.
-
-		for(i=0; i<data.length; i++)
+		var testData = new TestData();
+		var events = testData.getData();
+		for(i=0; i<events.length; i++)
 		{
-			var idx = 0;
-			$("#event-description")	.val(data[i][idx++]);
-			$("#column-number")		.val(data[i][idx++]);
-			$("#start-time")		.val(data[i][idx++]);
-			$("#duration")			.val(data[i][idx++]);
+			$("#event-description")	.val(events[i].description);
+			$("#column-number")		.val(events[i].column);
+			$("#start-time")		.val(events[i].start);
+			$("#duration")			.val(events[i].duration);
 			
 			$("#add-event-button").click();
 		}
