@@ -31,7 +31,7 @@ $(document).ready(function(){
                         ["English Intro", "3", "20:00", "60"],
                         ["Speaking practice", "3", "21:00", "60"],
                         
-                        ["English Inter", "4", "19:00", "60"],
+                        ["English Inter", "8", "19:00", "60"],
                         
                         
                         ["Spanish Inter", "5", "18:00", "60"],

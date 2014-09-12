@@ -1,5 +1,5 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<!-- Version = 2014-09-11_15.54.47 -->
+<!-- Version = 2014-09-12_14.20.50 -->
 <html>                                                                 
  <head>
 	 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -26,54 +26,57 @@
 		<input id="generate-test-data" type="button" value="Generate Test Data"/>
 		
 		<h2><span class="step-label">&#8680; Step 1: Input data</span></h2>
+		<div class="content-results">
 		<!-- Input form from user -->
-		<form>
-			<table id="input-table">
-				<tbody>
-					<tr>
-						<th><label for="event-description">Event description</label></th>
-						<td><input type="text" name="event-description" id="event-description" value="" maxlength="254" size="60" /></td>
-					</tr>
-					
-					<tr>
-						<th><label for="column-number">Column #</label></th>
-						<td><input type="text" name="column-number" id="column-number" value="" maxlength="2" size="2" /></td>
-					</tr>
-		
-					<tr>
-						<th><label for="start-time">Start Time</label></th>
-						<td><input type="text" name="start-time" id="start-time" value="" maxlength="5" size="5" /> (e.g 8:15)</td>
-					</tr>
-					
-					<tr>
-						<th><label for="duration">Duration</label></th>
-						<td><input type="text" name="duration" id="duration" value="" maxlength="3" size="3" /> minutes</td>
-					</tr>
-					
-					<tr>
-						<td>&nbsp;</td>
-						<td><input id="add-event-button" type="button" value="Add"/></td>
-					</tr>
-				</tbody>
-			</table>
-		</form> 
-		
-		<br /><br />
-		<!-- Input table -->
-	  <table id="input-data-table">
-	  	<thead>
-	  		<tr>
-	  			<th>Event Description</th>
-	  			<th>Column #</th>
-	  			<th>Start time</th>
-	  			<th>Duration</th>
-	  			<th>Remove</th>
-	  		</tr>
-	  	</thead>
-	  	
-	  	<tbody id="input-data-table-body">
-	  	</tbody>
-	  </table>
+			<form>
+				<table id="input-table">
+					<tbody>
+						<tr>
+							<th><label for="event-description">Event description</label></th>
+							<td><input type="text" name="event-description" id="event-description" value="" maxlength="254" size="60" /></td>
+						</tr>
+						
+						<tr>
+							<th><label for="column-number">Column #</label></th>
+							<td><input type="text" name="column-number" id="column-number" value="" maxlength="2" size="2" /></td>
+						</tr>
+			
+						<tr>
+							<th><label for="start-time">Start Time</label></th>
+							<td><input type="text" name="start-time" id="start-time" value="" maxlength="5" size="5" /> (e.g 8:15)</td>
+						</tr>
+						
+						<tr>
+							<th><label for="duration">Duration</label></th>
+							<td><input type="text" name="duration" id="duration" value="" maxlength="3" size="3" /> minutes</td>
+						</tr>
+						
+						<tr>
+							<td>&nbsp;</td>
+							<td><input id="add-event-button" type="button" value="Add"/></td>
+						</tr>
+					</tbody>
+				</table>
+			</form> 
+			
+			<br /><br />
+			<!-- Input table -->
+		  <table id="input-data-table">
+		  	<thead>
+		  		<tr>
+		  			<th>Event Description</th>
+		  			<th>Column #</th>
+		  			<th>Start time</th>
+		  			<th>Duration</th>
+		  			<th>Remove</th>
+		  		</tr>
+		  	</thead>
+		  	
+		  	<tbody id="input-data-table-body">
+		  	</tbody>
+		  </table>
+		  
+    </div>
 	
 		
 		
@@ -82,11 +85,12 @@
 		<input id="generate-timesheet" type="button" value="Generate Timesheet"/>
 		<br /><br />
 		<!-- Timesheet -->
-		<p><b>Column #X</b> can be edited. It will be reflected in the Excel when exported.</p>
-	  <table id="timesheet">
-	  	<tbody id="timesheet-body"/>
-	  </table>	
-	
+		<div class="content-results">
+			<p><b>Column #X</b> can be edited. It will be reflected in the Excel when exported.</p>
+		  <table id="timesheet">
+		  	<tbody id="timesheet-body"/>
+		  </table>	
+    </div>
 	
 		<br /><br />
 		<h2><span class="step-label">&#8680; Step 3: Export</span></h2>
