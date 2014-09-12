@@ -1,4 +1,4 @@
-/* Version = 2014-09-12_14.20.50 */
+/* Version = 2014-09-12_14.56.52 */
 
 
 /* CSS customization no related to the timesheet itself */
@@ -37,13 +37,6 @@ div#steps
 	color: white;
 }
 
-input#generate-test-data,
-input#generate-timesheet,
-input#export-to-excel
-{
-	 margin-left: 1em;
-}
-
 table#input-table > tbody > tr > th
 {
 	text-align: right;
@@ -52,4 +45,9 @@ table#input-table > tbody > tr > th
 div.content-results
 {
 	 margin-left: 5em;
+}
+
+div.action
+{
+	margin-left: 1em;
 }
