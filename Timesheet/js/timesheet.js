@@ -266,7 +266,7 @@ function get_event_td(event_data, time_slice)
 	var user_relevant_event_data = null; // Event description, Start time and duration.
 	
 	// Format timesheet: Add <br> depending on the rowspan.
-	var br_string = ", <br style=\"mso-data-placement:same-cell;\" />"
+	var br_string = "<br style=\"mso-data-placement:same-cell;\" />"
 	if( rowspan >= 3 )
 	{
 		user_relevant_event_data = event_data[0]+ br_string +event_data[2]+ br_string +event_data[3]; // Event description, Start time and duration.
