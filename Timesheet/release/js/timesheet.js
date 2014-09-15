@@ -1,5 +1,5 @@
 /**
- * @version = 2014-09-15_11.44.01
+ * @version = 2014-09-15_14.47.11
  * @author  = Xuan Ngo
  */
 
@@ -32,7 +32,7 @@ $(document).ready(function(){
 			$("#add-event-button").click();
 		}
 		
-		scrollTo("#input-data-table");
+		Animation.scrollTo("#input-data-table");
 	});
 	
 });
@@ -157,7 +157,7 @@ $(document).ready(function(){
 							timesheet_html += get_event_td(event_data[i], time_slice);	// Write <td></td> event.
 							event_found = true;
 						}
-						else if( get_floor(event_data[i][START_IN_MINUTES_ID], time_slice) <= time_minutes && time_minutes < get_ceil(event_data[i][END_IN_MINUTES_ID], time_slice) )
+						else if( MathFunc.floor(event_data[i][START_IN_MINUTES_ID], time_slice) <= time_minutes && time_minutes < MathFunc.ceil(event_data[i][END_IN_MINUTES_ID], time_slice) )
 						{// Don't write <td></td> if it is within an event.
 							event_found = true;
 						}
@@ -173,7 +173,7 @@ $(document).ready(function(){
 		remove_all_child_elements("timesheet-body"); // Clear timesheet table first.
 		$("#timesheet-body").append(timesheet_html);
 		
-		scrollTo("#timesheet");
+		Animation.scrollTo("#timesheet");
 	});
 	
 	
@@ -258,9 +258,9 @@ function get_event_td(event_data, time_slice)
 	//	Start = 09:00, duration = 45
 	//		On the grid, it has to start on 09:00 and end at 9:45.
 	
-	var start 	= get_floor(event_data[START_IN_MINUTES_ID], time_slice);
-	var end 	= get_ceil(event_data[END_IN_MINUTES_ID], time_slice);
-	var rowspan = (end-start)/time_slice; // The division is guaranteed to be an integer because of get_floor() and get_ceil().
+	var start 	= MathFunc.floor(event_data[START_IN_MINUTES_ID], time_slice);
+	var end 	= MathFunc.ceil(event_data[END_IN_MINUTES_ID], time_slice);
+	var rowspan = (end-start)/time_slice; // The division is guaranteed to be an integer because of MathFunc.floor() and MathFunc.ceil().
 	
 	var user_relevant_event_data = null; // Event description, Start time and duration.
 	
@@ -283,15 +283,6 @@ function get_event_td(event_data, time_slice)
 	return "<td class=\"event\" rowspan=\""+rowspan+"\">"+user_relevant_event_data+"</td>";
 }
 
-function get_floor(value, slice)
-{
-	return Math.floor(value/slice)*slice;
-}
-
-function get_ceil(value, slice)
-{
-	return Math.ceil(value/slice)*slice;
-}
 
 //======================================================
 //======================================================
@@ -300,7 +291,6 @@ function get_ceil(value, slice)
 $(document).ready(function(){
 	
 	$("#export-to-excel").click(function() {
-		window.alert("ehllo");
 		var export_format = new ExportFormat();
 		export_format.toExcel('timesheet');
 		
@@ -308,15 +298,3 @@ $(document).ready(function(){
 
 
 });
-
-/************************************************************************
- *                          
- *                          Helpers
- *                          
- ************************************************************************/
-function scrollTo(hash)
-{
-    $('html, body').animate({
-        'scrollTop':   $(hash).offset().top
-      }, 1000);	
-}

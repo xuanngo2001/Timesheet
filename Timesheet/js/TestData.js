@@ -14,7 +14,7 @@ TestData.prototype.getData = function ()
 	            ["Test not within time slice", "1", "19:05", "51"],
 	            ["English Beg", "1", "20:00", "60"],
 	            
-                ["Spanish Intro", "2", "19:00", "60"],
+                ["Spanish Intro", "2", "18:30", "75"],
                 ["English Intro", "2", "16:45", "60"],
                 ["Spanish Inter", "2", "20:15", "60"],
                 
