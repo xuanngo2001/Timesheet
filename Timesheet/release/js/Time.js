@@ -1,5 +1,5 @@
 /**
- * @version = $AUTO_VERSION
+ * @version = 2014-09-15_09.47.40
  * @author  = Xuan Ngo
  */
 
@@ -10,6 +10,7 @@ function Time()
 /**
  * Return the number of minutes from time string HH:MM.
  * @param time HH:MM
+ * @returns time in minutes
  */
 Time.prototype.getMinutes = function (time)
 {

@@ -12,6 +12,10 @@
       <fileset dir="./js"/>
     </copy>
 		
+    <copy todir="${release.dir}/lib">
+      <fileset dir="./lib"/>
+    </copy>
+    	
     <copy overwrite="true" file="timesheet.html" tofile="${release.dir}/timesheet.html"/>
 		
    
