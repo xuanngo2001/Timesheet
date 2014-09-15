@@ -1,6 +1,6 @@
 /**
  * Export HTML table to different formats.
- * @version = 2014-09-15_10.09.43
+ * @version = 2014-09-15_11.30.07
  * @author  = Xuan Ngo
  */
 
@@ -12,8 +12,8 @@ Export.prototype.toExcel =  function (table_id)
 	var html_table = document.getElementById(table_id).cloneNode(true);
 	
 	// Styling html table to make it pretty in Excel.
-	html_table = replace_input_with_value_text(html_table);
-	html_table = td_inline_styling(html_table);
+	html_table = this.replaceInputWithValueText(html_table);
+	html_table = this.inlineStyleTd(html_table);
 	
 	// MS OFFICE 2003  : data:application/vnd.ms-excel
 	// MS OFFICE 2007  : application/vnd.openxmlformats-officedocument.spreadsheetml.sheet

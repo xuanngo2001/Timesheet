@@ -4,16 +4,16 @@
  * @author  = Xuan Ngo
  */
 
-function Export()
+function ExportFormat()
 {}
 
-Export.prototype.toExcel =  function (table_id)
+ExportFormat.prototype.toExcel =  function (table_id)
 {
 	var html_table = document.getElementById(table_id).cloneNode(true);
 	
 	// Styling html table to make it pretty in Excel.
-	html_table = replace_input_with_value_text(html_table);
-	html_table = td_inline_styling(html_table);
+	html_table = this.replaceInputWithValueText(html_table);
+	html_table = this.inlineStyleTd(html_table);
 	
 	// MS OFFICE 2003  : data:application/vnd.ms-excel
 	// MS OFFICE 2007  : application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
@@ -22,7 +22,7 @@ Export.prototype.toExcel =  function (table_id)
 
 /************************************************************************
  *                          
- *                          Excel Helpers
+ *                          Helpers
  *                          
  ************************************************************************/
 /**
@@ -30,7 +30,7 @@ Export.prototype.toExcel =  function (table_id)
  * @param HTML table.
  * @returns HTML table.
  */
-Export.prototype.replaceInputWithValueText = function (html_table)
+ExportFormat.prototype.replaceInputWithValueText = function (html_table)
 {
 	// Get the column names and remove <input>.
 	var column_headers = html_table.getElementsByClassName("column-header");
@@ -54,7 +54,7 @@ Export.prototype.replaceInputWithValueText = function (html_table)
  * @param HTML table.
  * @returns HTML table.
  */
-Export.prototype.inlineStyleTd = function (html_table)
+ExportFormat.prototype.inlineStyleTd = function (html_table)
 {
 	var tds = html_table.getElementsByTagName("td");
 	for(i=0; i<tds.length; i++)

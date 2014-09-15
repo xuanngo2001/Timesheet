@@ -297,79 +297,16 @@ function get_ceil(value, slice)
 //======================================================
 //======================================================
 //============= Export Timesheet =======================
-function export_to_excel(table_id)
-{
-	var html_table = document.getElementById(table_id).cloneNode(true);
+$(document).ready(function(){
 	
-	// Styling html table to make it pretty in Excel.
-	html_table = replace_input_with_value_text(html_table);
-	html_table = td_inline_styling(html_table);
-	
-	// MS OFFICE 2003  : data:application/vnd.ms-excel
-	// MS OFFICE 2007  : application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
-    window.open('data:application/vnd.ms-excel,' + encodeURIComponent(html_table.outerHTML));
-}
-
-/**
- * Format html table to make it pretty in Excel: Replace <input> with value text.
- * @param table_id
- * @returns
- */
-function replace_input_with_value_text(html_table)
-{
-	// Get the column names and remove <input>.
-	var column_headers = html_table.getElementsByClassName("column-header");
-	for(i=0; i<column_headers.length; i++)
-	{
-		var input_header = column_headers[i].getElementsByTagName("input");
-		var column_header_name = input_header[0].value;
-
-		column_headers[i].removeChild(input_header[0]);
-
-		var value_node = document.createTextNode(column_header_name);
-		column_headers[i].appendChild(value_node);
-
-	}
-	
-	return html_table;
-}
-
-/************************************************************************
- *                          
- *                          Export to EXCEL
- *                          
- ************************************************************************/
-
-function td_inline_styling(html_table)
-{
-	var tds = html_table.getElementsByTagName("td");
-	for(i=0; i<tds.length; i++)
-	{
-		tds[i].style.borderWidth="1px";
-		tds[i].style.borderStyle="dotted";
-		tds[i].style.textAlign="center";
+	$("#export-to-excel").click(function() {
+		var export_format = new ExportFormat();
+		export_format.toExcel('timesheet');
 		
-		if(tds[i].className=="event" )
-		{
-			tds[i].style.backgroundColor="#D3D3D3";
-			tds[i].style.verticalAlign="middle";
-		}
-		
-		if(tds[i].className=="time-scale" )
-		{
-			/* Top of cell and bold. */
-			tds[i].style.verticalAlign="super";
-			tds[i].style.fontWeight="bold";
-		}
-		
-		if(tds[i].className=="column-header" )
-		{
-			tds[i].style.fontWeight="bold";
-		}		
-		
-	}
-	return html_table;
-}
+	});
+
+
+});
 
 /************************************************************************
  *                          
