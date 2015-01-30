@@ -1,5 +1,5 @@
 /**
- * @version = 2015-01-30_10.25.32
+ * @version = $AUTO_VERSION
  * @author  = Xuan Ngo
  */
 

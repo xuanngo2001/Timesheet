@@ -1,5 +1,5 @@
 /**
- * @version = 2014-09-15_10.28.34
+ * @version = 2014-09-15_15.25.23
  * @author  = Xuan Ngo
  */
 
@@ -14,7 +14,7 @@ TestData.prototype.getData = function ()
 	            ["Test not within time slice", "1", "19:05", "51"],
 	            ["English Beg", "1", "20:00", "60"],
 	            
-                ["Spanish Intro", "2", "19:00", "60"],
+                ["Spanish Intro", "2", "18:30", "75"],
                 ["English Intro", "2", "16:45", "60"],
                 ["Spanish Inter", "2", "20:15", "60"],
                 
