@@ -28,6 +28,12 @@
 		  <replacetoken>$AUTO_VERSION</replacetoken>
 		</replace>
 		
+		<!-- Zip release content -->
+		<zip destfile="${release.dir}/${ant.project.name}.zip"
+       basedir="${release.dir}"
+       excludes="*.zip"
+    />
+		
 	</target>
 
 	
