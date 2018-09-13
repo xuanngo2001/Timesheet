@@ -1,4 +1,0 @@
-/**
- * @version = $AUTO_VERSION
- */
-
