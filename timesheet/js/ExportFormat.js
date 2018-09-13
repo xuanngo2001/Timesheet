@@ -1,7 +1,6 @@
 /**
  * Export HTML table to different formats.
  * @version = $AUTO_VERSION
- * @author  = Xuan Ngo
  */
 
 function ExportFormat()

@@ -1,6 +1,5 @@
 /**
  * @version = $AUTO_VERSION
- * @author  = Xuan Ngo
  */
 
 function Event(description, column, start, duration)
